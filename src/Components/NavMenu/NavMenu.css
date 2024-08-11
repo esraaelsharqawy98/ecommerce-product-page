@@ -1,0 +1,19 @@
+.nav-menu{
+    width: 65%;
+    height: 100%;
+    background-color: white;
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 3rem;
+}
+.close{
+    width: 15px;
+}
+.nav-menu .nav-list{
+    display: block;
+    padding-left: 0;
+}
+.nav-menu .nav-list li{
+    margin-bottom: 2rem;
+}
