@@ -1,0 +1,41 @@
+.light-box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.light-box .close-btn{
+    position: relative;
+    left: 15rem;
+    margin-bottom: 2rem;
+    width: 30px;
+    cursor: pointer;
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(214deg) brightness(165%) contrast(101%);
+}
+.light-box .current-img{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+}
+ .arrows{
+    background-color: var(--White);
+    border-radius: 50%;
+    padding: 25px;
+    cursor: pointer;
+    position: relative;
+}
+.left{
+    left: 2rem;
+}
+.right{
+    right: 2rem;
+}
+.light-box .product-img img{
+    width: 550px;
+    cursor:auto;
+}
+.light-box .thumbnails{
+    justify-content: center;
+    gap: 3rem;
+}

@@ -1,6 +1,6 @@
 .nav-menu{
-    width: 65%;
-    height: 100%;
+    width: 250px;
+    min-height: 100%;
     background-color: white;
     padding: 1rem 2rem;
     display: flex;
@@ -14,6 +14,10 @@
     display: block;
     padding-left: 0;
 }
+.nav-menu .nav-list .nav-item a{
+    font-weight: 700;
+    color: var(--Very-dark-blue);
+  }
 .nav-menu .nav-list li{
     margin-bottom: 2rem;
 }

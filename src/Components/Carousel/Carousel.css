@@ -1,0 +1,29 @@
+.product-carousel{
+    display: none;
+    width: 100%;
+    position: relative;
+}
+.product-carousel .product-carousel-item{
+    width: 100%;
+}
+.product-carousel .product-carousel-item img{
+    width: 100%;
+    min-height: 315px;
+}
+.product-carousel .left{
+    position: absolute;
+    padding: 10px 15px;
+    top: 40%;
+    left: 10px;
+}
+.product-carousel .right{
+    padding: 10px 15px;
+    position: absolute;
+    top: 40%;
+    right: 10px;
+}
+@media screen and (max-width: 768px) {
+    .product-carousel{
+        display: block;
+    }
+}
