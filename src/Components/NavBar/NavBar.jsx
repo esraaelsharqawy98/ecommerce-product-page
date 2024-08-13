@@ -26,25 +26,25 @@ function NavBar() {
         </div>
         <ul className="nav-list">
           <li className="nav-item">
-            <a href="#">Collections</a>
+            <Link to="/Collection">Collections</Link>
           </li>
           <li className="nav-item">
-            <a href="#">Men</a>
+            <Link to="/Men">Men</Link>
           </li>
           <li className="nav-item">
-            <a href="#">Women</a>
+            <Link to="/Women">Women</Link>
           </li>
           <li className="nav-item">
-            <a href="#">About</a>
+            <Link to="/About">About</Link>
           </li>
           <li className="nav-item">
-            <a href="#">Contact</a>
+            <Link to="/Contact">Contact</Link>
           </li>
         </ul>
         <div className="nav-icons">
-          <a href="#">
+          <Link href="#">
             <img src={CartIcon} className="cart" alt="cart icon" />
-          </a>
+          </Link>
           <img src={ProfileImage} className="profile" alt="profile image" />
         </div>
       </nav>
