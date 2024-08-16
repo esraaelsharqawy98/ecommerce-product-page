@@ -7,20 +7,20 @@ function NavMenu({toggleNavMenu}) {
       <div className="nav-menu">
         <img src={CloseIcon} className="close" alt=" close icon" onClick={toggleNavMenu}/>
         <ul className="nav-list">
-          <li className="nav-item">
-            <a  href="#">Collections</a>
+        <li className="nav-item">
+            <Link to="/Collections">Collections</Link>
           </li>
           <li className="nav-item">
-            <a href="#">Men</a>
+            <Link to="/Men">Men</Link>
           </li>
           <li className="nav-item">
-            <a href="#">Women</a>
+            <Link to="/Women">Women</Link>
           </li>
           <li className="nav-item">
-            <a href="#">About</a>
+            <Link to="/About">About</Link>
           </li>
           <li className="nav-item">
-            <a href="#">Contact</a>
+            <Link to="/Contact">Contact</Link>
           </li>
         </ul>
       </div>
