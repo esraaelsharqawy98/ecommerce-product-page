@@ -23,7 +23,7 @@ function ProductGallery({ product }) {
   return (
     <>
       {showLightBox && <LightBox toggleLightBox={toggleLightBox} product={product}/>}
-      <section id="product-gallery">
+      <section className="product-gallery">
         <div className="product-img">
           <img src={activeImage} alt="Product" onClick={toggleLightBox} />
         </div>

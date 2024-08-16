@@ -1,10 +1,11 @@
-#product-gallery{
+.product-gallery{
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 450px;
 }
 .product-img img{
-    width: 500px;
+    width: 100%;
     border-radius: 1rem;
     cursor: pointer;
 }
@@ -41,9 +42,22 @@
 }
 .thumbnails .thumbnail-img img{
     max-width: 100px;
+    height: 100%;
 }
-@media screen and (max-width: 768px) {
-    #product-gallery{
+/* @media screen and (max-width: 1000px) {
+    .product-gallery{
+       width: 100%; 
+       align-items: center;
+    }
+    .product-img{
+        width: 600px;
+    }
+    .thumbnails{
+        gap: 3.5rem;
+    }
+} */
+@media screen and (max-width: 1000px) {
+    .product-gallery{
         display: none;
     }
 }

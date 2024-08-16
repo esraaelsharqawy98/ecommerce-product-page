@@ -8,7 +8,6 @@ import "./LightBox.css";
 function LightBox({ toggleLightBox, product }) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-
   const handlePrevious = () => {
     setCurrentIndex((prevIndex) =>
       prevIndex === 0 ? product.productImages.length - 1 : prevIndex - 1
@@ -33,28 +32,33 @@ function LightBox({ toggleLightBox, product }) {
         className="close-btn"
         onClick={toggleLightBox}
       />
-      <section id="product-gallery">
+      <section className="product-gallery">
         <div className="current-img">
-          <img
-            src={PreviousIcon}
-            className="arrows left"
-            alt="previous"
-            onClick={handlePrevious}
-          />
+          <button className="arrows left" onClick={handlePrevious}>
+            <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M11 1 3 9l8 8"
+                stroke="#1D2026"
+                strokeWidth="4"
+                fill="none"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
           <div className="product-img">
-            <img
-              src={
-                    product.productImages[currentIndex]
-                
-              }
-            />
+            <img src={product.productImages[currentIndex]} />
           </div>
-          <img
-            src={NextIcon}
-            className="arrows right"
-            alt="next"
-            onClick={handleNext}
-          />
+          <button className="arrows right" onClick={handleNext}>
+            <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="m2 1 8 8-8 8"
+                stroke="#1D2026"
+                strokeWidth="4"
+                fill="none"
+                fillRule="evenodd"
+              />
+            </svg>
+          </button>
         </div>
         <div className="thumbnails">
           {product.thumbnails.map((thumbnail, index) => (

@@ -1,11 +1,16 @@
+import { useState } from "react";
 import Quantity from "../Quantity/Quantity";
 import "./ProductDetails.css";
-function ProductDetails({product}) {
+function ProductDetails({product , setCartCount}) {
   const currentPrice = parseFloat(product.currentPrice).toFixed(2);
   const oldPrice = parseFloat(product.oldPrice).toFixed(2);
+  const [quantity, setQuantity] = useState(0);
+  function addToCart() {
+      setCartCount(quantity)
+  }
   return (
     <section id="product-details">
-      <h5 className="brand">{product.brand}</h5>
+      <h3 className="brand">{product.brand}</h3>
       <h1 className="product-name">{product.name}</h1>
       <p className="description">
         {product.description}
@@ -20,8 +25,8 @@ function ProductDetails({product}) {
         </span>
       </div>
       <div className="buttons">
-        <Quantity/>
-        <button className="add-to-cart">
+        <Quantity quantity={quantity} setQuantity={setQuantity}/>
+        <button className="add-to-cart" onClick={addToCart}>
           <img src="/images/icon-cart.svg" alt="" />
           Add to Cart</button>
       </div>

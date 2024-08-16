@@ -22,7 +22,7 @@
     top: 40%;
     right: 10px;
 }
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1000px) {
     .product-carousel{
         display: block;
     }

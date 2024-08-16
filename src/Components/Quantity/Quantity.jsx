@@ -1,14 +1,11 @@
-import { useState } from "react";
-
-function Quantity() {
-    const [quantity , setQuntity] = useState(0);
-    function decrementQuantity(){
-      quantity > 0 &&  setQuntity(quantity - 1);
-    }
-    function incrementQuantity(){
-        setQuntity(quantity + 1);
-    }
-   return (
+function Quantity({quantity, setQuantity}) {
+  function decrementQuantity() {
+    quantity > 0 ? setQuantity(quantity - 1) : setQuantity(0);
+  }
+  function incrementQuantity() {
+    setQuantity(quantity + 1);
+  }
+  return (
     <div className="product-quantity">
       <button className="minus" onClick={decrementQuantity}>
         <img src="/images/icon-minus.svg" alt="minus" />

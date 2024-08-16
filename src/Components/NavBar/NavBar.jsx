@@ -6,16 +6,23 @@ import Logo from "/images/logo.svg";
 import MenuIcon from "/images/icon-menu.svg";
 import NavMenu from "../NavMenu/NavMenu";
 import { useState } from "react";
-function NavBar() {
+import CartMenu from "../CartMenu/CartMenu";
+function NavBar({ cartCount , setCartCount , product}) {
   const [isNavMenuVisible, setiIsNavMenuVisible] = useState(false);
+  const [isCartMenuVisible, setIsCartMenuVisible] = useState(false);
   function toggleNavMenu() {
     setiIsNavMenuVisible(!isNavMenuVisible);
+  }
+  function toggleCartMenu() {
+    setIsCartMenuVisible(!isCartMenuVisible);
   }
   return (
     <header>
       <nav>
         <div className="menu">
-          <img src={MenuIcon} alt="menu icon" onClick={toggleNavMenu} />
+          <button className="btn" onClick={toggleNavMenu}>
+            <img src={MenuIcon} alt="menu icon" />
+          </button>
         </div>
         <div className="logo">
           <h1>
@@ -26,7 +33,7 @@ function NavBar() {
         </div>
         <ul className="nav-list">
           <li className="nav-item">
-            <Link to="/Collection">Collections</Link>
+            <Link to="/Collections">Collections</Link>
           </li>
           <li className="nav-item">
             <Link to="/Men">Men</Link>
@@ -42,16 +49,15 @@ function NavBar() {
           </li>
         </ul>
         <div className="nav-icons">
-          <Link href="#">
-            <img src={CartIcon} className="cart" alt="cart icon" />
-          </Link>
+          <button className="cart" onClick={toggleCartMenu}>
+           { cartCount > 0 && <span className="count">{ cartCount }</span>}
+            <img src={CartIcon} alt="cart icon" />
+          </button>
           <img src={ProfileImage} className="profile" alt="profile image" />
         </div>
       </nav>
-
-      {isNavMenuVisible && (
-        <NavMenu toggleNavMenu={toggleNavMenu} />
-      )}
+      {isCartMenuVisible && <CartMenu cartCount={cartCount} setCartCount={setCartCount} product={product}/>}
+      {isNavMenuVisible && <NavMenu toggleNavMenu={toggleNavMenu} />}
     </header>
   );
 }
